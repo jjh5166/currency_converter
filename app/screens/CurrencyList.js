@@ -1,0 +1,22 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Text, FlatList, View, StatusBar } from 'react-native';
+
+import currencies from '../data/currencies';
+
+const CurrencyList = () => (
+  <View style={{ flex: 1 }}>
+    <StatusBar barStyle="default" translucent={false} />
+    <FlatList
+      data={currencies}
+      renderItem={({ item }) => <Text>{item}</Text>}
+      keyExtractor={(item) => item}
+    />
+  </View>
+)
+
+CurrencyList.propTypes = {
+
+}
+
+export default CurrencyList
