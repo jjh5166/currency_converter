@@ -1,5 +1,9 @@
 module.exports = {
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
     "parser": "babel-eslint",
     "env": {
         "browser": true,
@@ -21,11 +25,12 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier"
     ],
     "rules": {
         "react/jsx-filename-extension": [
-            2,
+            1,
             {
                 "extensions": [
                     ".js",
@@ -33,14 +38,13 @@ module.exports = {
                 ]
             }
         ],
-        "react/forbid-prop-types": [
-            0
-        ],
-        "react/require-default-props": [
-            0
-        ],
-        "global-require": [
-            0
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es5",
+                "singleQuote": true,
+                "printWidth": 100
+            }
         ]
     }
 };
