@@ -10,6 +10,9 @@
     "lint:fix": "eslint app/ --fix"
   },
   "dependencies": {
+    "@react-native-community/masked-view": "0.1.5",
+    "@react-navigation/native": "^5.0.3",
+    "@react-navigation/stack": "^5.0.3",
     "babel-eslint": "^10.0.3",
     "color": "^3.1.2",
     "eslint-config-airbnb": "^18.0.1",
@@ -17,14 +20,21 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react-hooks": "2.3.0",
     "expo": "~36.0.0",
+    "hoist-non-react-statics": "^3.3.2",
     "moment": "^2.24.0",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native-dropdownalert": "^4.2.1",
     "react-native-extended-stylesheet": "^0.12.0",
-    "react-native-web": "~0.11.7"
+    "react-native-gesture-handler": "~1.5.0",
+    "react-native-reanimated": "~1.4.0",
+    "react-native-safe-area-context": "0.6.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-web": "~0.11.7",
+    "react-navigation": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
