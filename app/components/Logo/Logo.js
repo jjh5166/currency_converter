@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
-  View, Text, Keyboard, Animated, Platform
+  View, Text, Keyboard, Animated, Platform, StyleSheet,
 } from 'react-native';
 
 import styles from './styles';
@@ -8,6 +9,10 @@ import styles from './styles';
 const ANIMATION_DURATION = 250;
 
 class Logo extends Component {
+  static propTypes = {
+    tintColor: PropTypes.string,
+  };
+
   constructor(props) {
     super(props);
     this.containerImageWidth = new Animated.Value(styles.$largeContainerSize)
@@ -67,12 +72,14 @@ class Logo extends Component {
     ];
     return (
       <View style={styles.container}>
-        <Animated.Image
-          resizeMode="contain"
-          style={containerImageStyle}
-          source={require('./images/background.png')}
-        />
-        <Animated.Image resizeMode="contain" style={imageStyles} source={require('./images/logo.png')} />
+        <Animated.View style={containerImageStyle}>
+          <Animated.Image
+            resizeMode="contain"
+            style={[StyleSheet.absoluteFill, containerImageStyle]}
+            source={require('./images/background.png')}
+          />
+          <Animated.Image resizeMode="contain" style={imageStyles} source={require('./images/logo.png')} />
+        </Animated.View>
         <Text style={styles.text}>Currency Converter</Text>
       </View>
     );
