@@ -27,7 +27,7 @@ class Home extends Component {
 
   handlePressQuoteCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate('CurrencyListStack', { name: 'Quote Currency'});
+    navigation.navigate('CurrencyListStack', { screen: 'CurrencyList', params: { name: 'Quote Currency' } })
   }
   handleTextChange = (text) => {
     console.log('texy change ', text);
