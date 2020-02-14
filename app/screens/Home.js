@@ -22,12 +22,12 @@ class Home extends Component {
   }
   handlePressBaseCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate('CurrencyList', { name: 'Base Currency' });
+    navigation.navigate('CurrencyListStack', {screen: 'CurrencyList',params: { name: 'Base Currency' }})
   }
 
   handlePressQuoteCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate('CurrencyList', { name: 'Quote Currency' });
+    navigation.navigate('CurrencyListStack', { name: 'Quote Currency'});
   }
   handleTextChange = (text) => {
     console.log('texy change ', text);
@@ -36,7 +36,8 @@ class Home extends Component {
     console.log('press swap')
   }
   handleOptionsPress = () => {
-    console.log('press options')
+    const { navigation } = this.props;
+    navigation.navigate('Options');
   }
   render() {
     return (
