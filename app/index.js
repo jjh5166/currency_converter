@@ -1,11 +1,10 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import {
-  NavigationContainer
-} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import Navigator from './config/routes';
+import {AlertProvider} from './components/Alert';
 
 EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
@@ -21,8 +20,10 @@ EStyleSheet.build({
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Navigator />
-    </NavigationContainer>
+    <AlertProvider>
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
+    </AlertProvider>
   );
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { ScrollView, StatusBar, Platform, Linking } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
-
+import { connectAlert } from '../components/Alert';
 import { ListItem, Separator } from '../components/List';
 
 const ICON_COLOR = '#868686'
@@ -18,7 +18,8 @@ class Options extends Component {
     navigation.navigate('Themes');
   }
   handleSitePress = () => {
-    Linking.openURL('http://fixer.io').catch(()=>alert('an error'))
+    const { alertWithType } = this.props;
+    Linking.openURL('http://fixer.io').catch(() => alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now."));
   }
   render() {
     return (
@@ -45,4 +46,4 @@ class Options extends Component {
   }
 }
 
-export default Options
+export default connectAlert(Options);
