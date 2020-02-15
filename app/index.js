@@ -2,9 +2,11 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { NavigationContainer } from '@react-navigation/native';
+import { Provider } from 'react-redux';
 
 import Navigator from './config/routes';
-import {AlertProvider} from './components/Alert';
+import { AlertProvider } from './components/Alert';
+import store from './config/store';
 
 EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
@@ -18,12 +20,12 @@ EStyleSheet.build({
   $darkText: '#343434'
 });
 
-export default function App() {
-  return (
-    <AlertProvider>
-      <NavigationContainer>
-        <Navigator />
-      </NavigationContainer>
-    </AlertProvider>
+export default () => (
+    <Provider store={store} >
+      <AlertProvider>
+        <NavigationContainer>
+          <Navigator onNavigationStateChange={null} />
+        </NavigationContainer>
+      </AlertProvider>
+    </Provider>
   );
-}
