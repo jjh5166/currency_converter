@@ -24,12 +24,12 @@ class Home extends Component {
   }
   handlePressBaseCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate('CurrencyListStack', {screen: 'CurrencyList',params: { name: 'Base Currency' }})
+    navigation.navigate('CurrencyListStack', {screen: 'CurrencyList',params: { name: 'Base Currency', type: 'base' }})
   }
 
   handlePressQuoteCurrency = () => {
     const { navigation } = this.props;
-    navigation.navigate('CurrencyListStack', { screen: 'CurrencyList', params: { name: 'Quote Currency' } })
+    navigation.navigate('CurrencyListStack', { screen: 'CurrencyList', params: { name: 'Quote Currency', type: 'quote' } })
   }
   handleTextChange = (amount) => {
     this.props.dispatch(changeCurrencyAmount(amount))
