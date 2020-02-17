@@ -5,8 +5,6 @@ import createSagaMiddleware from 'redux-saga';
 import reducers from '../reducers';
 import rootSaga from './sagas';
 
-// import { processColor } from 'react-native';
-
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
 if (process.env.NODE_ENV === 'development') {
