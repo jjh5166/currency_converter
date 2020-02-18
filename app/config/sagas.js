@@ -1,9 +1,5 @@
 import { takeEvery, select, call, put } from 'redux-saga/effects';
 
-// 1. swap currency
-// 2. change base
-// 3. initial app load
-
 import { SWAP_CURRENCY, CHANGE_BASE_CURRENCY, GET_INITIAL_CONVERSION, CONVERSION_RESULT, CONVERSION_ERROR } from '../actions/currencies'
 
 const getLatestRate = (currency) => fetch(`https://fixer.handlebarlabs.com/latest?base=${currency}`)
@@ -21,9 +17,16 @@ function* fetchLatestConversionRates(action) {
     yield put({ type: CONVERSION_ERROR, error: e.message })
     
   }
-  //y use call
-  
 }
+// Saga Effects
+// Effect -> call the function Api.fetch with `./products` as argument
+// {
+//   CALL: {
+//     fn: Api.fetch,
+//       args: ['./products']
+//   }
+// }
+// put -> creates the dispatch Effect
 export default function* rootSaga() {
   yield takeEvery(GET_INITIAL_CONVERSION, fetchLatestConversionRates);
   yield takeEvery(CHANGE_BASE_CURRENCY, fetchLatestConversionRates);
