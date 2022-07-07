@@ -20,7 +20,7 @@
     "eslint-plugin-react-hooks": "2.3.0",
     "expo": "~36.0.0",
     "hoist-non-react-statics": "^3.3.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
     "react": "~16.9.0",
